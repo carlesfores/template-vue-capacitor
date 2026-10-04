@@ -8,7 +8,7 @@
   <RouterView />
 </template>
 
-<style>
+<style lang="scss">
 nav {
   display: flex;
   gap: 1rem;

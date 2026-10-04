@@ -1,0 +1,53 @@
+:root {
+  --template-drakula-palette-background: #282a36;
+  --template-drakula-palette-current-line: #6272a4;
+  --template-drakula-palette-selection: #44475a;
+  --template-drakula-palette-foreground: #f8f8f2;
+  --template-drakula-palette-comment: #6272a4;
+  --template-drakula-palette-cyan: #8be9fd;
+  --template-drakula-palette-purple: #bd93f9;
+  --template-drakula-palette-yellow: #f1fa8c;
+
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  background-color: var(--template-drakula-palette-background);
+}
+
+html,
+body {
+  margin: 0;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.current-line {
+  background-color: var(--template-drakula-palette-current-line);
+}
+
+.selection {
+  background-color: var(--template-drakula-palette-selection);
+}
+
+.foreground {
+  background-color: var(--template-drakula-palette-foreground);
+}
+
+.comment {
+  background-color: var(--template-drakula-palette-comment);
+}
+
+.cyan {
+  background-color: var(--template-drakula-palette-cyan);
+}
+
+.purple {
+  background-color: var(--template-drakula-palette-purple);
+}
+
+.yellow {
+  background-color: var(--template-drakula-palette-yellow);
+}
