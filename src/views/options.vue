@@ -1,14 +1,22 @@
-<script setup></script>
+<script setup>
+const colorPalette = [
+  { name: "current line", class: "--template-drakula-palette-current-line" },
+  { name: "selection", class: "--template-drakula-palette-selection" },
+  { name: "foreground", class: "--template-drakula-palette-foreground" },
+  { name: "comment", class: "--template-drakula-palette-comment" },
+  { name: "cyan", class: "--template-drakula-palette-cyan" },
+  { name: "purple", class: "--template-drakula-palette-purple" },
+  { name: "yellow", class: "--template-drakula-palette-yellow" },
+];
+</script>
 
 <template>
   <div>options view</div>
-    <ul>
-    <li class="current-line">current line</li>
-    <li class="selection">selection</li>
-    <li class="foreground">foreground</li>
-    <li class="comment">comment</li>
-    <li class="cyan">cyan</li>
-    <li class="purple">purple</li>
-    <li class="yellow">yellow</li>
+  <ul>
+    <div v-for="(color, index) in colorPalette" :key="index">
+      <li :style="{ backgroundColor: `var(${color.class})` }">
+        {{ color.name }}
+      </li>
+    </div>
   </ul>
 </template>

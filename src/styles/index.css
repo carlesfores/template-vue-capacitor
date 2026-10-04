@@ -16,38 +16,9 @@
 html,
 body {
   margin: 0;
-  display: block;
 }
 
 ul {
   list-style: none;
   padding: 0;
-}
-
-.current-line {
-  background-color: var(--template-drakula-palette-current-line);
-}
-
-.selection {
-  background-color: var(--template-drakula-palette-selection);
-}
-
-.foreground {
-  background-color: var(--template-drakula-palette-foreground);
-}
-
-.comment {
-  background-color: var(--template-drakula-palette-comment);
-}
-
-.cyan {
-  background-color: var(--template-drakula-palette-cyan);
-}
-
-.purple {
-  background-color: var(--template-drakula-palette-purple);
-}
-
-.yellow {
-  background-color: var(--template-drakula-palette-yellow);
 }
