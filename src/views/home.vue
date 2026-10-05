@@ -6,8 +6,12 @@ import { RouterLink } from "vue-router";
   <main class="home-screen">
     <div class="home-screen__ornament" aria-hidden="true">
       <span class="home-screen__moon"></span>
-      <span class="home-screen__spark home-screen__spark--one">✳</span>
-      <span class="home-screen__spark home-screen__spark--two">✦</span>
+      <span class="home-screen__orbit home-screen__orbit--one">
+        <span class="home-screen__spark home-screen__spark--one">✳</span>
+      </span>
+      <span class="home-screen__orbit home-screen__orbit--two">
+        <span class="home-screen__spark home-screen__spark--two">✦</span>
+      </span>
     </div>
 
     <section class="home-screen__content">
@@ -123,19 +127,40 @@ import { RouterLink } from "vue-router";
 
 .home-screen__spark {
   position: absolute;
+  top: 0;
+  left: 50%;
   color: var(--color-gold);
+  transform: translate(-50%, -50%);
+}
+
+.home-screen__orbit {
+  position: absolute;
+  border-radius: 50%;
+  animation: orbit 28s linear infinite;
+}
+
+.home-screen__orbit--one {
+  inset: 9%;
+}
+
+.home-screen__orbit--two {
+  inset: 21%;
+  animation-duration: 20s;
+  animation-direction: reverse;
 }
 
 .home-screen__spark--one {
-  top: 32%;
-  left: 4%;
   font-size: 1.2rem;
 }
 
 .home-screen__spark--two {
-  top: 56%;
-  right: 4%;
   font-size: 0.9rem;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 @media (max-height: 680px) {
@@ -150,6 +175,12 @@ import { RouterLink } from "vue-router";
 
   .home-screen__intro {
     margin: 1.2rem 0 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-screen__orbit {
+    animation: none;
   }
 }
 </style>
