@@ -42,7 +42,6 @@ const { selectedCards, selectedCount, isComplete, drawCard, resetDraw } =
           :aria-labelledby="`deck-${deck.id}`"
         >
           <div class="deck__heading">
-            <span class="deck__number">0{{ index + 1 }}</span>
             <h2 :id="`deck-${deck.id}`" class="deck__name">{{ deck.name }}</h2>
             <p class="deck__prompt">{{ deck.prompt }}</p>
           </div>
@@ -151,14 +150,6 @@ const { selectedCards, selectedCount, isComplete, drawCard, resetDraw } =
 .deck__heading {
   min-height: 5.4rem;
   margin-bottom: 0.75rem;
-}
-
-.deck__number {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: var(--color-gold);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
 }
 
 .deck__name {
