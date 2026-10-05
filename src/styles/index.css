@@ -1,24 +1,123 @@
 :root {
-  --template-drakula-palette-background: #282a36;
-  --template-drakula-palette-current-line: #6272a4;
-  --template-drakula-palette-selection: #44475a;
-  --template-drakula-palette-foreground: #f8f8f2;
-  --template-drakula-palette-comment: #6272a4;
-  --template-drakula-palette-cyan: #8be9fd;
-  --template-drakula-palette-purple: #bd93f9;
-  --template-drakula-palette-yellow: #f1fa8c;
+  color-scheme: dark;
+  --color-night: #19211f;
+  --color-paper: #f0eadf;
+  --color-muted: #a8aaa0;
+  --color-gold: #dec696;
+  --color-accent: #526e61;
+  --color-card-back: #283630;
+  --color-card-copy: #526057;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: Inter, "Avenir Next", Avenir, "Segoe UI", sans-serif;
 
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-body);
   font-size: 16px;
-  background-color: var(--template-drakula-palette-background);
+  font-synthesis: none;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  background: var(--color-night);
+  color: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html,
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--color-night);
+}
+
 body {
+  min-width: 320px;
+  min-height: 100vh;
   margin: 0;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+body,
+button {
+  font-family: var(--font-body);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.eyebrow {
+  color: var(--color-gold);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+.button {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.button:active {
+  transform: scale(0.985);
+}
+
+.button--primary {
+  background: var(--color-paper);
+  color: var(--color-night);
+}
+
+.button--primary:hover {
+  background: #fffaf0;
+}
+
+.button--quiet {
+  justify-content: center;
+  border-color: rgb(231 223 205 / 28%);
+  background: transparent;
+  color: var(--color-paper);
+}
+
+.button--quiet:hover {
+  border-color: var(--color-gold);
+  background: rgb(231 223 205 / 5%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
